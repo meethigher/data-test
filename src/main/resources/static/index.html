@@ -16,6 +16,7 @@
             type: "POST",
             url: "http://localhost:9999/calc",
             success:function (result) {
+                console.log(result);
                 for (let i=0;i<result.length;i++) {
                     document.write(result[i]);
                 }

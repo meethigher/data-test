@@ -1,5 +1,6 @@
 package com.baiduj.datatest.datatest.controller;
 
+import com.baiduj.datatest.datatest.model.BaseResponse;
 import com.baiduj.datatest.datatest.service.DataTestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,8 +15,8 @@ public class DataTestController {
     private DataTestService dataTestService;
 
     @PostMapping("calc")
-    public List<String> calc() throws Exception {
-        return dataTestService.calc();
+    public BaseResponse<List<String>> calc() throws Exception {
+        return new BaseResponse<>(0, "success", dataTestService.calc());
     }
 
 }
